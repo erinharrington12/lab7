@@ -2,15 +2,21 @@
 public class HealthyPerson extends Person
 {
 
-    public Person(String name, int age, String reason) {
+    private String reason;
+    
+    public HealthyPerson(String name, int age, String reason) {
         
+        super(name, age);
+        this.reason = reason;
     }
     
     protected int compareToImpl(Person p) {
+        return 0;
         
     }
     
     public String toString() {
+        return null;
         
     }
 }
