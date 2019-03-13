@@ -11,15 +11,27 @@ public class SickPerson extends Person
         
     }
     
+ 
     protected int compareToImpl(Person p) {
-        return 0;
+        int result = 0;
+		if (this.severity < p.getSeverity()) {
+    		
+			result = -1;
+		
+    	} else if (this.severity > p.getSeverity()) {
+    		result = 1;
+    	} else if (this.severity == p.getSeverity()) {
+    		result = 0;
+    	}
+		return result;
+    	
         
     
     }
     
     public String toString()
     {
-        return null;
+        return String.format("%s Severity level %d", super.toString(), severity);
         
     }
 }

@@ -10,6 +10,9 @@ public abstract class Person implements Comparable<Person>
 	private String name;
 
 	private int age;
+	
+	private int severity;
+	
 
 	/**
 	 * Stores the name and age of the Person.
@@ -42,7 +45,11 @@ public abstract class Person implements Comparable<Person>
 	{
 		return age;
 	}
-
+	
+	protected int getSeverity() {
+		return severity;
+	}
+	
 	/**
 	 * Subclass implementation of Person comparison.
 	 *

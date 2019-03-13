@@ -11,12 +11,27 @@ public class HealthyPerson extends Person
     }
     
     protected int compareToImpl(Person p) {
-        return 0;
+        
+    	int result = 0;
+    	int compare = this.getName().compareToIgnoreCase(p.getName());
+    	 
+    	if (!(p instanceof HealthyPerson)) {
+    		result = 0;
+    	} else if (compare < 0) {
+    		result = -1;
+    	} else if (compare == 0) {
+    		result = 0;
+    	} else if (compare > 0) {
+    		result = 1;
+    	}
+    	
+    	return result;
         
     }
     
     public String toString() {
-        return null;
+        
+    	return String.format("%s In for %s", super.toString(), reason);
         
     }
 }
