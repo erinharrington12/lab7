@@ -25,7 +25,7 @@ public class HealthyPerson extends Person
     		result = 1;
     	}
     	
-    	return result;
+    	return compare;
         
     }
     

@@ -15,7 +15,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	
 	protected Stack<PatientType> stackHospital;
 	
-    StackHospital() {
+    public StackHospital() {
         stackHospital = new Stack<PatientType>();
     }
     
@@ -40,8 +40,13 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     }
     
     public String allPatientInfo() {
-        Iterator<PatientType> iter = stackHospital.iterator();
-        return (String) iter.next();     
+        
+    	String patients = "";
+    	for (PatientType p: stackHospital) {
+    		patients += p.toString();
+    	}
+    	return patients;
+    	
     	
     }
 }

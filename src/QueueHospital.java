@@ -1,11 +1,12 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QueueHospital<PatientType>
+public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
 
 	protected Queue<PatientType> queueHospital;
-    QueueHospital()
+    
+	public QueueHospital()
     {
     	queueHospital = new LinkedList<PatientType>();
     }
@@ -37,6 +38,10 @@ public class QueueHospital<PatientType>
 
     public String allPatientInfo()
     {
-    	  return ((LinkedList<PatientType>) queueHospital).listIterator(0).toString();
+    	String patients = "";
+    	for (PatientType p: queueHospital) {
+    		patients += p.toString();
+    	}
+    	return patients;
     }
 }

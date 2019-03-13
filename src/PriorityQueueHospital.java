@@ -1,11 +1,11 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class PriorityQueueHospital<PatientType extends Comparable<PatientType>>
+public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType>
 {
 	protected Queue<PatientType> priorityQueueHospital;
 	
-    PriorityQueueHospital()
+    public PriorityQueueHospital()
     {
     	priorityQueueHospital = new LinkedList<PatientType>();
     }
@@ -17,12 +17,13 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>>
 
     public PatientType nextPatient()
     {
+    	return priorityQueueHospital.peek();
 
     }
 
     public PatientType treatNextPatient()
     {
-
+    	return priorityQueueHospital.remove();
     }
 
     public int numPatients()
@@ -37,6 +38,10 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>>
 
     public String allPatientInfo()
     {
-
+    	String patients = "";
+    	for (PatientType p: priorityQueueHospital) {
+    		patients += p.toString();
+    	}
+    	return patients;
     }
 }
